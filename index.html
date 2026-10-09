@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesan Melon Premium — PBL Manajemen Agribisnis Polije Kampus 2</title>
+<meta name="description" content="Pesan melon Golden Pear segar hasil budidaya mahasiswa Manajemen Agribisnis Polije Kampus 2 Bondowoso langsung via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --g900: #0f3320;
+  --g800: #1a5435;
+  --g700: #217a4a;
+  --g600: #2ea05f;
+  --g500: #3cbd76;
+  --g400: #5ed490;
+  --g300: #8ee8b0;
+  --g200: #c0f3d4;
+  --g100: #e4fbee;
+  --g050: #f4fdf8;
+
+  --lime:  #9ef441;
+  --lime2: #c6fc7b;
+  --gold:  #e8c56a;
+
+  --ink:   #0a2216;
+  --mid:   #2d5040;
+  --muted: #5a8068;
+  --pale:  #93bba6;
+  --line:  rgba(46,160,95,.14);
+
+  --white: #ffffff;
+  --bg:    #f5fdf8;
+
+  --shadow-sm: 0 4px 16px rgba(15,51,32,.08);
+  --shadow:    0 12px 40px rgba(15,51,32,.12);
+  --shadow-lg: 0 24px 60px rgba(15,51,32,.15);
+
+  --r: 16px;
+  --r-lg: 24px;
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box }
+html { scroll-behavior: smooth }
+body { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 400; background: var(--bg); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased }
+a { color: inherit; text-decoration: none }
+img { display: block; max-width: 100% }
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 5px }
+::-webkit-scrollbar-track { background: var(--g050) }
+::-webkit-scrollbar-thumb { background: var(--g400); border-radius: 99px }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 200;
+  padding: 0 5%; height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(245,253,248,.92); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--line);
+  transition: background .3s;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--g500), var(--g700));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; box-shadow: 0 4px 12px rgba(60,189,118,.3);
+}
+.nav-brand { font-family: 'Lora', serif; font-size: 1rem; font-weight: 500; color: var(--g800); line-height: 1.1 }
+.nav-brand small { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .6rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 3px }
+.nav-links { display: flex; gap: 28px; list-style: none }
+.nav-links a { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--mid); transition: color .2s }
+.nav-links a:hover { color: var(--g600) }
+.nav-cta {
+  font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--white); background: linear-gradient(135deg, var(--g500), var(--g700));
+  padding: 10px 20px; border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(46,160,95,.28);
+  transition: transform .2s, box-shadow .2s;
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(46,160,95,.35) }
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh; padding-top: 68px;
+  display: grid; grid-template-columns: 1.1fr .9fr;
+  background: linear-gradient(160deg, #e8faf0 0%, #f5fdf8 40%, #eafaf2 100%);
+  position: relative; overflow: hidden;
+}
+.hero-blob {
+  position: absolute; pointer-events: none; border-radius: 50%;
+  filter: blur(60px); opacity: .55;
+}
+.hero-blob-1 { width: 500px; height: 500px; background: var(--g200); top: -80px; left: -120px }
+.hero-blob-2 { width: 380px; height: 380px; background: var(--lime2); bottom: -80px; right: 10%; opacity: .3 }
+.hero-blob-3 { width: 240px; height: 240px; background: var(--gold); top: 30%; left: 40%; opacity: .22 }
+
+.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 8% 7% 8% 8%; position: relative }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(60,189,118,.12); border: 1px solid rgba(60,189,118,.25);
+  padding: 6px 14px; border-radius: 999px; margin-bottom: 32px;
+  animation: fadeUp .7s ease both;
+}
+.hero-eyebrow-dot { width: 7px; height: 7px; background: var(--g500); border-radius: 50%; animation: pulse 2s infinite }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(.85)} }
+.hero-eyebrow span { font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--g700) }
+
+.hero-title {
+  font-family: 'Lora', serif; font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 400; line-height: 1.06; color: var(--g900);
+  letter-spacing: -.02em; animation: fadeUp .7s .08s ease both;
+}
+.hero-title em { font-style: italic; color: var(--g600) }
+.hero-title .line-accent {
+  position: relative; display: inline-block;
+}
+.hero-title .line-accent::after {
+  content: ''; position: absolute; left: 0; bottom: 4px;
+  width: 100%; height: 8px;
+  background: linear-gradient(90deg, var(--lime2), var(--g300));
+  z-index: -1; border-radius: 4px; opacity: .6;
+}
+
+.hero-sub { font-size: .9rem; line-height: 1.85; color: var(--muted); max-width: 420px; margin-top: 24px; animation: fadeUp .7s .16s ease both }
+
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 36px; animation: fadeUp .7s .24s ease both }
+.btn-primary {
+  font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--white); background: linear-gradient(135deg, var(--g500), var(--g700));
+  padding: 14px 28px; border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(46,160,95,.3);
+  transition: transform .2s, box-shadow .2s; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(46,160,95,.38) }
+.btn-secondary {
+  font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--g700); background: var(--white);
+  border: 1.5px solid rgba(46,160,95,.3);
+  padding: 14px 28px; border-radius: 999px;
+  transition: all .2s;
+}
+.btn-secondary:hover { border-color: var(--g500); background: var(--g050); transform: translateY(-1px) }
+
+.hero-stats { display: flex; gap: 32px; margin-top: 48px; animation: fadeUp .7s .32s ease both }
+.stat-item { display: flex; flex-direction: column }
+.stat-n { font-family: 'Lora', serif; font-size: 1.8rem; font-weight: 500; color: var(--g800); line-height: 1 }
+.stat-l { font-size: .65rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 4px }
+
+.hero-right { position: relative; display: flex; align-items: stretch; padding: 40px 6% 40px 0 }
+.hero-img-wrap {
+  width: 100%; border-radius: var(--r-lg);
+  background: linear-gradient(145deg, var(--g200) 0%, var(--g300) 50%, var(--g100) 100%);
+  position: relative; overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  animation: slideIn 1s ease both;
+}
+.hero-img-inner {
+  width: 100%; height: 100%; min-height: 480px;
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; padding: 28px;
+}
+.hero-ph-text { font-family: 'Lora', serif; font-size: .9rem; font-style: italic; color: rgba(15,51,32,.45); line-height: 1.8 }
+.hero-badge {
+  position: absolute; top: 24px; right: 24px;
+  background: var(--white); border-radius: var(--r); padding: 14px 18px;
+  box-shadow: var(--shadow); border: 1px solid var(--line);
+  animation: fadeUp .7s .5s ease both;
+}
+.hero-badge-label { font-size: .58rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px }
+.hero-badge-val { font-family: 'Lora', serif; font-size: 1rem; font-weight: 500; color: var(--g800) }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
+@keyframes slideIn { from { opacity:0; transform:scale(1.04) } to { opacity:1; transform:scale(1) } }
+@keyframes zoomIn { from { transform:scale(1.05) } to { transform:scale(1) } }
+
+/* ─── SECTION COMMONS ─── */
+.sec { padding: 96px 5% }
+.inner { max-width: 1180px; margin: 0 auto }
+.section-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--g100); border: 1px solid var(--g200);
+  padding: 5px 14px; border-radius: 999px; margin-bottom: 20px;
+}
+.section-tag span { font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--g700) }
+.section-heading {
+  font-family: 'Lora', serif; font-size: clamp(1.9rem, 3.5vw, 3rem);
+  font-weight: 400; line-height: 1.12; color: var(--g900); letter-spacing: -.015em;
+}
+.section-heading em { font-style: italic; color: var(--g600) }
+.section-sub { font-size: .88rem; line-height: 1.9; color: var(--muted); margin-top: 14px }
+.divider { width: 40px; height: 3px; background: linear-gradient(90deg, var(--g500), var(--g300)); border-radius: 99px; margin: 22px 0 }
+/* ─── PRODUK: tambahan (galeri melon, pengetahuan sekilas, CTA) ─── */
+.product-center-img { width: 100%; height: 100%; object-fit: cover; display: block }
+.btn-wa {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 15px 28px; border-radius: 999px; background: #25d366; color: var(--white);
+  font-size: .74rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  box-shadow: 0 8px 24px rgba(37,211,102,.32); transition: all .2s; cursor: pointer;
+}
+.btn-wa:hover { background: #1db954; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(37,211,102,.4) }
+.btn-wa .wa-ic { width: 20px; height: 20px; fill: #fff; flex-shrink: 0 }
+.btn-wa.lg { padding: 18px 34px; font-size: .8rem }
+.btn-ghost-light {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 15px 26px; border-radius: 999px; color: var(--white);
+  border: 1.5px solid rgba(255,255,255,.4); background: rgba(255,255,255,.08);
+  font-size: .74rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; transition: all .2s;
+}
+.btn-ghost-light:hover { background: rgba(255,255,255,.18); transform: translateY(-2px) }
+.prod-cta { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center }
+.prod-cta small { font-size: .72rem; color: var(--muted); line-height: 1.6; max-width: 240px }
+
+.melon-gal-wrap { margin-top: 88px }
+.melon-gal-head { max-width: 760px; margin-bottom: 30px }
+.melon-gal { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px }
+.melon-fig { margin: 0; border-radius: var(--r-lg); overflow: hidden; background: var(--g050); border: 1px solid var(--line); box-shadow: var(--shadow-sm); position: relative }
+.melon-fig img { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; display: block; transition: transform .5s }
+.melon-fig:hover img { transform: scale(1.04) }
+.melon-fig figcaption {
+  position: absolute; left: 12px; right: 12px; bottom: 12px; padding: 11px 14px;
+  background: rgba(255,255,255,.94); backdrop-filter: blur(10px); border-radius: 12px;
+  font-size: .72rem; line-height: 1.55; color: var(--mid);
+}
+.melon-fig figcaption b { display: block; font-size: .64rem; letter-spacing: .12em; text-transform: uppercase; color: var(--g700); margin-bottom: 2px }
+
+.quick-wrap { margin-top: 88px }
+.quick-head { max-width: 760px; margin-bottom: 30px }
+.quick-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px }
+.quick-card { padding: 26px 22px; border-radius: var(--r-lg); background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow-sm); transition: transform .25s, box-shadow .25s, border-color .25s }
+.quick-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--g300) }
+.quick-ico { width: 44px; height: 44px; border-radius: 12px; background: var(--g100); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 16px }
+.quick-k { font-size: .64rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--g600); margin-bottom: 6px }
+.quick-v { font-size: .82rem; line-height: 1.75; color: var(--mid) }
+
+/* ─── PESAN: tambahan (banner CTA, langkah, tombol melayang) ─── */
+.order-banner {
+  margin-top: 48px; border-radius: var(--r-lg); overflow: hidden; position: relative;
+  display: grid; grid-template-columns: 1.15fr .85fr; align-items: stretch;
+  background: linear-gradient(135deg, var(--g900), var(--g700)); box-shadow: var(--shadow-lg);
+}
+.order-banner-body { padding: 48px 44px }
+.order-banner-tag { font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--lime2); display: flex; align-items: center; gap: 8px }
+.order-banner-tag::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 4px rgba(158,244,65,.25) }
+.order-banner h3 { font-family: 'Lora', serif; font-weight: 400; font-size: clamp(1.7rem, 3.2vw, 2.4rem); line-height: 1.15; color: var(--white); margin: 14px 0 12px; letter-spacing: -.015em }
+.order-banner h3 em { font-style: italic; color: var(--lime2) }
+.order-banner p { font-size: .88rem; line-height: 1.85; color: rgba(255,255,255,.75); max-width: 440px }
+.order-banner-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px }
+.order-banner-img { position: relative; min-height: 280px }
+.order-banner-img img { position: absolute; inset: 0; width: 100%; height: 100% !important; object-fit: cover; display: block }
+.order-banner-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--g900) 0%, rgba(15,51,32,0) 38%) }
+
+.order-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px }
+.order-step { display: flex; gap: 14px; align-items: flex-start; padding: 20px 22px; border-radius: var(--r-lg); background: var(--g050); border: 1px solid var(--line) }
+.order-step-n { width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; background: linear-gradient(135deg, var(--g500), var(--g700)); color: var(--white); font-size: .8rem; font-weight: 800; display: flex; align-items: center; justify-content: center }
+.order-step-t { font-size: .8rem; font-weight: 700; color: var(--ink); margin-bottom: 3px }
+.order-step-d { font-size: .76rem; line-height: 1.65; color: var(--muted) }
+
+.wa-float {
+  position: fixed; right: 22px; bottom: 22px; z-index: 90;
+  display: flex; align-items: center; gap: 10px; padding: 14px 20px 14px 16px; border-radius: 999px;
+  background: #25d366; color: #fff; font-size: .74rem; font-weight: 700; letter-spacing: .06em;
+  box-shadow: 0 10px 30px rgba(37,211,102,.45); transition: transform .2s, background .2s;
+}
+.wa-float:hover { background: #1db954; transform: translateY(-3px) }
+.wa-float .wa-ic { width: 24px; height: 24px; fill: #fff }
+
+
+
+html { scroll-padding-top: 76px }
+.hero-wa-note { font-size: .72rem; color: var(--muted); margin-top: 14px; animation: fadeUp .7s .3s ease both }
+#hero .btn-wa { padding: 15px 30px }
+.hero-img-inner { padding: 0; position: relative }
+.hero-img-inner img { position: absolute; inset: 0; width: 100%; height: 100% !important; object-fit: cover }
+.nav-wa { display: inline-flex; align-items: center; gap: 8px; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: #25d366; padding: 10px 20px; border-radius: 999px; box-shadow: 0 6px 20px rgba(37,211,102,.3); transition: transform .2s, background .2s }
+.nav-wa:hover { background: #1db954; transform: translateY(-1px) }
+.nav-wa .wa-ic { width: 16px; height: 16px; fill: #fff }
+.info-compact { margin-top: 20px; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--line); background: var(--white); box-shadow: var(--shadow-sm) }
+.info-compact .info-row { display: grid; grid-template-columns: 110px 1fr; padding: 15px 26px; border-bottom: 1px solid var(--line); gap: 14px }
+.info-compact .info-row:last-child { border-bottom: none }
+.i-k { font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--g600); padding-top: 2px }
+.i-v { font-size: .83rem; line-height: 1.75; color: var(--mid) }
+footer { background: var(--g900); color: rgba(255,255,255,.75); padding: 40px 5% 90px }
+.foot-in { max-width: 1180px; margin: 0 auto; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center }
+.foot-brand { font-family: 'Lora', serif; font-size: 1.1rem; color: #fff }
+.foot-in p { font-size: .76rem; line-height: 1.7; margin-top: 6px }
+.foot-in a.foot-wa { display: inline-flex; align-items: center; gap: 8px; font-size: .78rem; font-weight: 600; color: var(--lime2) }
+.foot-in a.foot-wa .wa-ic { width: 18px; height: 18px; fill: var(--lime2) }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease }
+.reveal.up { opacity: 1; transform: translateY(0) }
+#foto, #sekilas { background: var(--white) }
+#sekilas { background: var(--g050) }
+#pesan { background: var(--white) }
+@media(max-width:960px){
+  #hero { grid-template-columns: 1fr }
+  .hero-left { padding: 56px 6% 36px }
+  .hero-right { min-height: 320px; padding: 0 6% 48px }
+  .hero-img-inner { min-height: 360px }
+  .sec { padding: 72px 5% }
+  .melon-gal-wrap, .quick-wrap { margin-top: 0 }
+  .quick-grid { grid-template-columns: 1fr 1fr }
+  .order-banner { grid-template-columns: 1fr }
+  .order-banner-img { min-height: 240px; order: -1 }
+  .order-banner-img::after { background: linear-gradient(0deg, var(--g900) 0%, rgba(15,51,32,0) 45%) }
+  .order-banner-body { padding: 32px 26px 36px }
+  .order-steps { grid-template-columns: 1fr }
+  .info-compact .info-row { grid-template-columns: 1fr; gap: 4px }
+}
+@media(max-width:700px){
+  .melon-gal { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding-bottom: 8px }
+  .melon-fig { flex: 0 0 78%; scroll-snap-align: start }
+  .nav-brand small { display: none }
+}
+@media(max-width:560px){
+  .hero-stats { gap: 18px }
+  .quick-grid { grid-template-columns: 1fr }
+  .btn-wa, .btn-secondary, .btn-ghost-light { width: 100%; text-align: center; justify-content: center }
+  .hero-btns { flex-direction: column }
+  .wa-float { right: 14px; bottom: 14px; padding: 14px }
+  .wa-float span { display: none }
+  .nav-wa { padding: 10px 14px }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">🍈</div>
+    <div class="nav-brand">Melon Premium PBL<small>Manajemen Agribisnis · Polije Kampus 2 Bondowoso</small></div>
+  </div>
+  <a href="https://wa.me/6282141955268?text=Halo%2C%20saya%20ingin%20memesan%20Melon%20Premium%20PBL%20%F0%9F%8D%88%0A%0ANama%20saya%3A%20%5BNama%20Anda%5D%0AJumlah%20yang%20ingin%20dipesan%3A%20%5Bjumlah%5D%0AKeperluan%3A%20%5Bkonsumsi%20pribadi%2Foleh-oleh%2Facara%5D%0AAlamat%20pengiriman%2Fpengambilan%3A%20%5BAlamat%5D%0A%0ATerima%20kasih%21" target="_blank" rel="noopener" class="nav-wa"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="wa-ic" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Pesan via WA</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-blob hero-blob-3"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-dot"></span>
+      <span>Project Based Learning · 2025-2026</span>
+    </div>
+    <h1 class="hero-title">
+      Melon<br>
+      <em>Premium</em><br>
+      <span class="line-accent">Hasil Budidaya</span><br>
+      Mahasiswa
+    </h1>
+    <p class="hero-sub">Produk melon berkualitas dari kegiatan Project Based Learning mahasiswa Manajemen Agribisnis Politeknik Negeri Jember Kampus 2 Bondowoso.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/6282141955268?text=Halo%2C%20saya%20ingin%20memesan%20Melon%20Premium%20PBL%20%F0%9F%8D%88%0A%0ANama%20saya%3A%20%5BNama%20Anda%5D%0AJumlah%20yang%20ingin%20dipesan%3A%20%5Bjumlah%5D%0AKeperluan%3A%20%5Bkonsumsi%20pribadi%2Foleh-oleh%2Facara%5D%0AAlamat%20pengiriman%2Fpengambilan%3A%20%5BAlamat%5D%0A%0ATerima%20kasih%21" target="_blank" rel="noopener" class="btn-wa"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="wa-ic" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Pesan via WhatsApp</a>
+      <a href="#foto" class="btn-secondary">Lihat Foto Melon</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><span class="stat-n">100%</span><span class="stat-l">Hasil Mahasiswa</span></div>
+      <div class="stat-item" style="border-left:1px solid var(--line);padding-left:32px"><span class="stat-n">Fresh</span><span class="stat-l">Langsung Kebun</span></div>
+      <div class="stat-item" style="border-left:1px solid var(--line);padding-left:32px"><span class="stat-n">Golden</span><span class="stat-l">Pear</span></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-img-wrap">
+      <div class="hero-img-inner">
+        <img src="foto-hero.jpg" alt="Melon Golden Pear segar dengan label dan pita Fresh" width="896" height="1105">
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-label">Status Stok</div>
+        <div class="hero-badge-val">🟢 Tersedia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOTO MELON -->
+<section id="foto" class="sec">
+  <div class="inner">
+    <div class="melon-gal-head reveal">
+      <div class="section-tag"><span>Foto Melon</span></div>
+      <h2 class="section-heading">Dari Kebun <em>ke Tangan Anda</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="melon-gal reveal">
+      <figure class="melon-fig">
+        <img src="foto-produk.jpg" alt="Dua buah melon Golden Pear berlabel di atas meja kayu" loading="lazy" width="1227" height="864">
+        <figcaption><b>Siap Dinikmati</b>Melon Golden Pear berkulit kuning cerah dengan label dan pita &ldquo;Fresh&rdquo;.</figcaption>
+      </figure>
+      <figure class="melon-fig">
+        <img src="foto-panen.jpg" alt="Buah melon menguning dipetik mahasiswa di greenhouse" loading="lazy" width="963" height="1280">
+        <figcaption><b>Dipanen Langsung</b>Buah dipetik saat matang di kebun greenhouse.</figcaption>
+      </figure>
+      <figure class="melon-fig">
+        <img src="foto-perawatan.jpg" alt="Tanaman melon merambat di dalam greenhouse" loading="lazy" width="780" height="1040">
+        <figcaption><b>Tanaman Terawat</b>Dirawat rutin agar buah tumbuh optimal.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- PENGETAHUAN SEKILAS -->
+<section id="sekilas" class="sec">
+  <div class="inner">
+    <div class="quick-head reveal">
+      <div class="section-tag"><span>Pengetahuan Sekilas</span></div>
+      <h2 class="section-heading">Kenali <em>Melon Golden Pear</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="quick-grid">
+      <div class="quick-card reveal"><div class="quick-ico">🍈</div><div class="quick-k">Ciri Fisik</div><div class="quick-v">Kulit kuning cerah dengan bentuk bulat sedikit lonjong. Buah matang berwarna kuning merata.</div></div>
+      <div class="quick-card reveal"><div class="quick-ico">😋</div><div class="quick-k">Rasa</div><div class="quick-v">Daging buah berwarna terang, segar, berair, dan manis. Cocok dimakan langsung.</div></div>
+      <div class="quick-card reveal"><div class="quick-ico">💧</div><div class="quick-k">Manfaat</div><div class="quick-v">Kaya kandungan air dan vitamin C, menyegarkan untuk dikonsumsi sehari-hari.</div></div>
+      <div class="quick-card reveal"><div class="quick-ico">🥗</div><div class="quick-k">Penyajian &amp; Simpan</div><div class="quick-v">Nikmati langsung, jadikan jus, es buah, atau salad. Simpan utuh di suhu ruang, potongan di kulkas.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PEMESANAN -->
+<section id="pesan" class="sec">
+  <div class="inner">
+    <div class="reveal" style="max-width:480px">
+      <div class="section-tag"><span>Pemesanan</span></div>
+      <h2 class="section-heading">Pesan <em>Sekarang</em></h2>
+      <div class="divider"></div>
+      <p class="section-sub">Tersedia dalam jumlah terbatas sesuai hasil panen. Hubungi kami segera sebelum kehabisan.</p>
+    </div>
+
+    <div class="order-banner reveal">
+      <div class="order-banner-body">
+        <div class="order-banner-tag">Stok Tersedia</div>
+        <h3>Pesan Melon Segar <em>Langsung via WhatsApp</em></h3>
+        <p>Cukup satu klik, WhatsApp akan terbuka dengan format pesanan yang sudah siap. Tinggal isi nama, jumlah, dan alamat, lalu kirim.</p>
+        <div class="order-banner-btns">
+          <a href="https://wa.me/6282141955268?text=Halo%2C%20saya%20ingin%20memesan%20Melon%20Premium%20PBL%20%F0%9F%8D%88%0A%0ANama%20saya%3A%20%5BNama%20Anda%5D%0AJumlah%20yang%20ingin%20dipesan%3A%20%5Bjumlah%5D%0AKeperluan%3A%20%5Bkonsumsi%20pribadi%2Foleh-oleh%2Facara%5D%0AAlamat%20pengiriman%2Fpengambilan%3A%20%5BAlamat%5D%0A%0ATerima%20kasih%21" target="_blank" rel="noopener" class="btn-wa lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="wa-ic" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Pesan via WhatsApp</a>
+          <a href="https://wa.me/6282141955268?text=Halo%2C%20saya%20ingin%20pre-order%20Melon%20Premium%20PBL%20%F0%9F%8D%88%0A%0ANama%3A%20%5BNama%20Anda%5D%0AJumlah%20pre-order%3A%20%5Bjumlah%5D%20buah%2Fkg%0AKontak%3A%20%5BNomor%20WA%20aktif%5D%0AKeperluan%3A%20%5Bkonsumsi%20pribadi%2Fhampers%2Facara%5D%0A%0AMohon%20info%20harga%20dan%20estimasi%20panen.%20Terima%20kasih%21" target="_blank" rel="noopener" class="btn-ghost-light">🌿 Pre-Order</a>
+        </div>
+      </div>
+      <div class="order-banner-img">
+        <img src="foto-produk.jpg" alt="Melon Golden Pear siap dipesan" loading="lazy" width="1227" height="864">
+      </div>
+    </div>
+
+    <div class="order-steps reveal">
+      <div class="order-step"><span class="order-step-n">1</span><div><div class="order-step-t">Klik Tombol Pesan</div><div class="order-step-d">WhatsApp terbuka langsung ke nomor tim kami.</div></div></div>
+      <div class="order-step"><span class="order-step-n">2</span><div><div class="order-step-t">Isi Format Pesanan</div><div class="order-step-d">Lengkapi nama, jumlah, keperluan, dan alamat.</div></div></div>
+      <div class="order-step"><span class="order-step-n">3</span><div><div class="order-step-t">Konfirmasi Tim</div><div class="order-step-d">Kami konfirmasi stok, harga, dan jadwal ambil/kirim.</div></div></div>
+    </div>
+
+    <div class="info-compact reveal">
+      <div class="info-row"><span class="i-k">Harga</span><span class="i-v">Hubungi kami untuk informasi harga terkini per buah / per kilogram.</span></div>
+      <div class="info-row"><span class="i-k">Sistem</span><span class="i-v">Pre-order dan pembelian langsung saat stok tersedia.</span></div>
+      <div class="info-row"><span class="i-k">Lokasi</span><span class="i-v">Politeknik Negeri Jember Kampus 2 Bondowoso, Jawa Timur.</span></div>
+      <div class="info-row"><span class="i-k">Untuk</span><span class="i-v">Konsumsi pribadi, oleh-oleh &amp; hampers, acara &amp; event, serta pembelian partai / reseller.</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div>
+      <span class="foot-brand">🍈 Melon Premium PBL</span>
+      <p>Manajemen Agribisnis · Politeknik Negeri Jember Kampus 2 Bondowoso</p>
+    </div>
+    <a href="https://wa.me/6282141955268" target="_blank" rel="noopener" class="foot-wa"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="wa-ic" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp: +62 821-4195-5268</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/6282141955268?text=Halo%2C%20saya%20ingin%20memesan%20Melon%20Premium%20PBL%20%F0%9F%8D%88%0A%0ANama%20saya%3A%20%5BNama%20Anda%5D%0AJumlah%20yang%20ingin%20dipesan%3A%20%5Bjumlah%5D%0AKeperluan%3A%20%5Bkonsumsi%20pribadi%2Foleh-oleh%2Facara%5D%0AAlamat%20pengiriman%2Fpengambilan%3A%20%5BAlamat%5D%0A%0ATerima%20kasih%21" target="_blank" rel="noopener" class="wa-float" aria-label="Pesan melon via WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="wa-ic" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>Pesan via WA</span></a>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('up'); io.unobserve(e.target) } })
+}, { threshold: .08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
